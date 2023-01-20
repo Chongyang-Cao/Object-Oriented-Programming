@@ -35,19 +35,26 @@ namespace Application
 {
     class Program
     {
+        static void Define(Book book, string _Name, string _Author, string _Genre, long _ISBN, decimal _Price)
+        {
+            book.Name = _Name;
+            book.Author = _Author;
+            book.Genre = _Genre;
+            book.ISBN = _ISBN;
+            book.Price = _Price;
+        }
         static void Main(string[] args)
         {
             Book book1 = new Book();
-            book1.Name = "Mike the Poltergheist";
-            book1.Author = "Edward";
-            book1.Genre = "Children";
-            book1.ISBN = 6533186971011;
-            book1.Price = Convert.ToDecimal(3.50);
+            Program.Define(book1, "Mike the Poltergheist", "Edward", "Children Fiction", 6533186710118, Convert.ToDecimal(3.50)) ;
             Console.WriteLine(book1.getName());
             Console.WriteLine(book1.getAuthor());
+            Console.WriteLine(book1.ISBN);
             book1.sale(book1, 1);
             Console.WriteLine(book1.Price);
         }
+        
     }
+
 }
 
